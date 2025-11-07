@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Pollazo - Carta</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url('carta1.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+    .inicio {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(0,0,0,0.4);
+      backdrop-filter: blur(3px);
+      text-align: center;
+    }
+
+    .logo {
+      position: absolute;
+      top: 40px;
+      width: 200px;
+      border-radius: 12px;
+    }
+
+    .boton-pollo {
+      background: none;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      margin-top: 140px;
+      animation: aleteo 1.6s infinite ease-in-out;
+    }
+
+    @keyframes aleteo {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(-5deg) scale(1.05); }
+      50% { transform: rotate(5deg) scale(1.1); }
+      75% { transform: rotate(-5deg) scale(1.05); }
+    }
+
+    .boton-pollo img {
+      width: 140px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+    }
+
+    .boton-pollo span {
+      display: block;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 10px;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .carta {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background: #000;
+      min-height: 100vh;
+    }
+
+    .carta img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .mostrar {
+      display: flex !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="inicio" id="inicio">
+    <img src="logo.jpeg" alt="El Pollazo" class="logo" />
+    <button class="boton-pollo" onclick="mostrarCarta()">
+      <img src="botonpollo.jpeg" alt="Botón Pollo" />
+      <span>Ver carta 🍗</span>
+    </button>
+  </div>
+
+  <div class="carta" id="carta">
+    <img src="carta1.jpeg" alt="Carta página 1">
+    <img src="carta2.jpeg" alt="Carta página 2">
+  </div>
+
+  <script>
+    function mostrarCarta() {
+      document.getElementById('inicio').style.display = 'none';
+      document.getElementById('carta').classList.add('mostrar');
+    }
+  </script>
+
+</body>
+</html>
